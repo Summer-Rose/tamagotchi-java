@@ -2,22 +2,18 @@ public class Tamagotchi {
 	private String mName;
 	private int mWeight;
 	private int mAge;
-	private int mMeals;
+	private int mMealsCount;
 	private int mHappyLevel;
-	private int mBathroomLevel;
-	private int mTime;
 
 	private final int MAX_MEALS = 5;
 	private final int MAX_HAPPYLEVEL = 5;
-	private final int MAX_BATHROOMLEVEL = 5;
 
 	public Tamagotchi(String name) {
 		mName = name;
 		mWeight = 1;
 		mAge = 0;
-		mMeals = 0;
+		mMealsCount = 0;
 		mHappyLevel = 3;
-		mBathroomLevel = 0;
 	}
 
 	public String getName() {
@@ -33,31 +29,47 @@ public class Tamagotchi {
 	}
 
 	public int getMeals() {
-		return mMeals;
+		return mMealsCount;
 	}
 
 	public int getHappyLevel() {
 		return mHappyLevel;
 	}
 
-	public int getBathroomLevel() {
-		return mBathroomLevel;
-	}
-
 	public int eat() {
-		if (mMeals < MAX_MEALS) {
-			mMeals += 1;
-		} else if (mMeals == MAX_MEALS){
-			mWeight += 1;
-			mMeals = 0;
+		if (mMealsCount < MAX_MEALS) {
+			if (mMealsCount + 1 == MAX_MEALS) {
+				mWeight += 1;
+			}
+			mMealsCount += 1;
+		} else if (mMealsCount == MAX_MEALS){
+			mAge += 1;
+			mMealsCount = 1;
 		}
-		return mMeals;
+		return mMealsCount;
 	}
 
-	public int getOlder() {
-		if (mWeight % 5 == 0) {
-			mAge += (mWeight/5) + 1;
+	public boolean isHungry() {
+		return (mMealsCount <= 1);
 		}
-		return mAge;
+
+	public int adjustHappyLevel() {
+		if (isHungry()) {
+			mHappyLevel = 1;
+		}
+		else {
+			if (mMealsCount < MAX_MEALS && mHappyLevel < MAX_HAPPYLEVEL) {
+				mHappyLevel += 1;
+			} else if (mMealsCount == MAX_MEALS) {
+				mHappyLevel -= 1;
+			}
+		}
+		return mHappyLevel;
 	}
+
+	public boolean needsBathroom() {
+		return (mMealsCount == MAX_MEALS);
+	}
+
+
 }

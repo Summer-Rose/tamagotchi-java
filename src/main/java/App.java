@@ -15,11 +15,11 @@ public class App {
       System.out.println("Initial weight: " + momo.getWeight());
       System.out.println("**********************************");
 
-      for (int i=0; i<50; i++) {
+      for (int i=0; i<15; i++) {
         eatMeals();
       }
 
-      momo.getOlder();
+
       System.out.println("**********************************");
       System.out.println("Age: " + momo.getAge());
 
@@ -30,6 +30,11 @@ public class App {
       momo.eat();
       System.out.println("Number of meals eaten: " + momo.getMeals());
       System.out.println("Weight: " + momo.getWeight());
+      System.out.println("Hungry? " + momo.isHungry());
+      momo.adjustHappyLevel();
+      System.out.println("Happiness Level: " + momo.getHappyLevel());
+      System.out.println("Need potty? " + momo.needsBathroom());
+
       System.out.println("**********************************");
     }
 }
