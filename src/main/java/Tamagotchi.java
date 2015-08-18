@@ -28,7 +28,7 @@ public class Tamagotchi {
 		return mAge;
 	}
 
-	public int getMeals() {
+	public int getMealsCount() {
 		return mMealsCount;
 	}
 
@@ -71,5 +71,10 @@ public class Tamagotchi {
 		return (mMealsCount == MAX_MEALS);
 	}
 
+	public void play() {
+		if (mHappyLevel < MAX_HAPPYLEVEL) {
+			mHappyLevel += 1;
+		}
+	}
 
 }
