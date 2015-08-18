@@ -1,0 +1,37 @@
+Hunger Meter
+Happy Meter
+Age
+Weight
+Name
+Bathroom
+
+State meter effects age
+Hungry = unhappy (Boolean)
+Bathroom = hungry
+Full = happy
+After full, time passes before bathroom
+
+
+
+Full effects Weight
+5 meals = +2 weight
+
+Weight effects Age
+4 weight = +1 age
+
+Full effects bathroom
++5 full = +2 bathroom
+
+Hunger effects happy
+5 hungry = -3 happy
+
+Time effects hunger
+5 time = hungry
+
+Time meter
+Distance between meals effect happy meter
+1 minute between meals = -1 happy
+2 minutes between meals = -2 happy
+
+Play meter
+1 play = +1 happy

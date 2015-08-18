@@ -4,15 +4,20 @@ import static org.junit.Assert.*;
 public class UnitTest {
 
 	@Test
-	public void Task_instantiatesCorrectly_true() {
-		Task myTask = new Task("Mow the lawn");
-		assertEquals(true, myTask instanceof Task);
+	public void Tamagotchi_instantiatesCorrectly_true() {
+		Tamagotchi myTamagotchi = new Tamagotchi("Momo");
+		assertEquals(true, myTamagotchi instanceof Tamagotchi);
 	}
 
 	@Test
-	public void task_instantiatesWithDescription_true() {
-		Task myTask = new Task("Mow the lawn");
-		assertEquals("Mow the lawn", myTask.getDescription());
+	public void Tamagotchi_getsCorrectAge() {
+		Tamagotchi myTamagotchi = new Tamagotchi("Momo");
+		assertEquals(0, myTamagotchi.getAge());
 	}
 
+	@Test
+	public void Tamagotchi_getsCorrectWeight() {
+		Tamagotchi myTamagotchi = new Tamagotchi("Momo");
+		assertEquals(1, myTamagotchi.getWeight());
+	}
 }
