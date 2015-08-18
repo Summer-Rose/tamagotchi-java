@@ -1,20 +1,20 @@
 <h1 class="well">Tamagotchi</h1>
 
-<p>Welcome to your tamagotchi, $userName!</p>
-
-<p>Good luck!</p>
-
-<h3>$myTam.getName()</h3>
+<h2 id="tamName">$myTam.getName()</h2>
 
 
 #if ($playClicked)
   <img src="/img/play.gif">
+  <p>+1 Happiness :)</p>
 #elseif ($feedClicked)
   <img src="/img/eat.gif">
+  <p>Don't overfeed $myTam.getName(), $userName!</p>
 #else
+  <h3>Welcome to your tamagotchi, $userName!</h3>
+  <p>Good luck!</p>
   <img src="/img/baby.gif">
 #end
-
+<br>
 <ul>
   <li>$myTam.getName()'s age is: $myTam.getAge()</li>
   <li>$myTam.getName()'s weight is: $myTam.getWeight()</li>
@@ -23,18 +23,13 @@
   <li>Is $myTam.getName() hungry?: $myTam.isHungry()</li>
 </ul>
 
-
 <form action="/play-game" method="post">
   <input id="playClicked" name="playClicked" class="form-control" type="hidden" value=true>
   <button type="submit" class="btn btn-info" id="play">Play</button>
 </form>
 <form action="/play-game" method="post">
   <input id="feedClicked" name="feedClicked" class="form-control" type="hidden" value=true>
-  <button type="submit" class="btn btn-info">Feed</button>
+  <button type="submit" class="btn btn-info" id="feed">Feed</button>
 </form>
-
-
-
-
 
 <a href="/">Make a new Tamagotchi</a>

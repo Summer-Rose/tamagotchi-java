@@ -1,0 +1,19 @@
+body {
+  background-color: #BEEB9F;
+}
+
+h1 {
+  color: #FF6138;
+}
+
+#tamName {
+  color: #00A388;
+}
+
+#play {
+  margin-bottom: 10px;
+}
+
+#feed {
+  margin-bottom: 10px;
+}
